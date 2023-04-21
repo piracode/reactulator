@@ -60,13 +60,13 @@ export default function App() {
 
       case "number":
         if (currentValue === "0" && !isOperatorClicked) {
-          setCurrentValue(button.text);
+          setCurrentValue(button.text.toString());
         } else if (isOperatorClicked) {
           setIsOperatorClicked(false);
           setPreviousValue(currentValue);
-          setCurrentValue(button.text);
+          setCurrentValue(button.text.toString());
         } else if (!isOperatorClicked && isEqualClicked) {
-          setCurrentValue(button.text);
+          setCurrentValue(button.text.toString());
           setIsEqualClicked(false);
         } else {
           setCurrentValue(
@@ -86,10 +86,13 @@ export default function App() {
           if (button.text <= 9) {
             setCurrentValue("0");
           } else {
-            setCurrentValue(
-              (prevDisplayValue) =>
+            setCurrentValue((prevDisplayValue) => {
+              // console.log("PrevDisplayValue: ", prevDisplayValue);
+              return (
                 prevDisplayValue.slice(0, prevDisplayValue.length - 1) || "0"
-            );
+              );
+              // return "10";
+            });
           }
         }
         break;
