@@ -8,6 +8,7 @@ export default function Keypad(props) {
       {calculatorButtons.map((button) => (
         <button
           key={button.className}
+          data-type={button["data-type"]}
           className={button.className}
           onClick={() => props.onButtonClick(button)}
         >

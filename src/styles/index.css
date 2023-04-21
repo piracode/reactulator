@@ -22,13 +22,7 @@ html {
   box-sizing: inherit;
 }
 
-/* .wrapper {
-  background-color: black;
-  height: 100vh;
-} */
-
 button {
-  background-color: #f1f1f1;
   border: 1px solid #ccc;
   padding: 10px 20px;
   font-size: 1.3rem;
@@ -49,16 +43,34 @@ button:hover {
   background-color: rgb(228, 151, 218);
 }
 
+button[data-type="number"] {
+  background-color: rgb(233, 218, 221);
+}
+
+button[data-type="memory"] {
+  background-color: #51b29b;
+}
+
+button[data-type="clear"] {
+  background-color: rgb(223, 162, 102);
+}
+button[data-type="equal"] {
+  background-color: rgb(223, 102, 102);
+}
 .wrapper {
   background-color: #f6f8f9;
   /* width: 20rem; */
   padding: 2rem;
   margin-top: 4rem;
   border-radius: 1rem;
-  box-shadow: 15px 3px 39px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 3px 39px 8px rgba(0, 0, 0, 0.241);
+  border: 1px solid black;
 }
 
 .display {
+  color: white;
+  font-weight: 800;
+  background-color: rgba(0, 0, 0, 0.594);
   height: 4rem;
   border: 1px black solid;
   display: flex;
@@ -71,8 +83,113 @@ button:hover {
 
 .keypad {
   display: grid;
+  grid-template-areas:
+    ". . . ac c"
+    "ms mc mr m-minus m-plus"
+    "seven eight nine percent square-root"
+    "four five six multiply divide"
+    "one two three add subtract"
+    "zero decimal sign equal equal";
+  grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
+}
+.multiply {
+  grid-area: multiply;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.subtract {
+  grid-area: subtract;
+}
+
+.percent {
+  grid-area: percent;
+}
+
+.square-root {
+  grid-area: square-root;
+}
+
+.add {
+  grid-area: add;
+}
+
+.decimal {
+  grid-area: decimal;
+}
+
+.sign {
+  grid-area: sign;
+}
+
+.equal {
+  grid-area: equal;
+}
+.zero {
+  grid-area: zero;
+}
+
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.m-minus {
+  grid-area: m-minus;
+}
+.m-plus {
+  grid-area: m-plus;
+}
+
+.ac {
+  grid-area: ac;
+}
+
+.c {
+  grid-area: c;
+}
+.ms {
+  grid-area: ms;
+}
+.mc {
+  grid-area: mc;
+}
+.mr {
+  grid-area: mr;
 }
 
 .title {
